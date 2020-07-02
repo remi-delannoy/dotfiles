@@ -8,3 +8,8 @@
 
 # latex\_compile.sh
 A script that compile your .tex file without having to type 4 times pdflatex
+
+# fish setup
+- [omf](https://github.com/oh-my-fish/oh-my-fish)
+- copy config.fish into ~/.config/fish/conf.d
+
