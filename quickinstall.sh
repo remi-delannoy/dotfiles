@@ -12,6 +12,7 @@ echo "installing nvim plugins"
 nvim -es -u $HOME/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
 #fish
 echo "installing fish config"
+curl -fsSL https://get.oh-my.fish | fish
 curl -fsSLo $HOME/.config/fish/conf.d/config.fish --create-dirs \
     https://raw.githubusercontent.com/remi-delannoy/dotfile/master/config.fish
 #ls color
