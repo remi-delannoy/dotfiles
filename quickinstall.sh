@@ -10,6 +10,9 @@ curl -fsSLo $HOME/.config/nvim/init.vim --create-dirs \
     https://raw.githubusercontent.com/remi-delannoy/dotfile/master/init.vim 
 echo "installing nvim plugins"
 nvim -es -u $HOME/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
+#alacritty
+curl -fsSLo $HOME/.config/alacritty/alacritty.yml --create-dirs \
+    https://raw.githubusercontent.com/remi-delannoy/dotfile/master/alacritty.yml
 #fish
 echo "installing fish config"
 curl -fsSL https://get.oh-my.fish | fish

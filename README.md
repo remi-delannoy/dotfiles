@@ -1,6 +1,6 @@
-# Quick installation
+## Quick installation
 
-` sh -c "$(curl -fsSL https://raw.githubusercontent.com/remi-delannoy/dotfile/master/quickinstall.sh)" `
+` curl -fsSL https://raw.githubusercontent.com/remi-delannoy/dotfile/master/quickinstall.sh | sh `
 
 **Note that some auto formating/compiling requires other programs/scripts and might not work out of the box on any machine**
 
