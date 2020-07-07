@@ -3,15 +3,15 @@ set shell=/usr/bin/sh
 let mapleader=','
 
 call plug#begin('~/.local/share/nvim/plugged') 
-Plug 'ayu-theme/ayu-vim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ayu-theme/ayu-vim' 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-surround', { 'do': ':UpdateRemotePlugins' }
-Plug 'tpope/vim-commentary', { 'do': ':UpdateRemotePlugins' }
-Plug 'bling/vim-airline', { 'do': ':Update RemotePlugins' }
-Plug 'easymotion/vim-easymotion', { 'do': ':UpdateRemotePlugins' } 
-Plug 'ctrlpvim/ctrlp.vim', { 'do': ':UpdateRemotePlugins' }
-Plug 'vim-scripts/bufexplorer.zip', { 'do': ':UpdateRemotePlugins' }
-Plug 'JuliaEditorSupport/julia-vim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'bling/vim-airline'
+Plug 'easymotion/vim-easymotion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-scripts/bufexplorer.zip'
+Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
 
 "plugins config
