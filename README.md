@@ -4,7 +4,7 @@
 3. start neovim and download the packages with the commmand :PlugInstall, keep them up to date with :PlugUpdate 
 4. restart neovim and enjoy 
 
-**Note that some auto formating/compiling requires other programs/scripts and might not work out of the box on any m-achine**
+**Note that some auto formating/compiling requires other programs/scripts and might not work out of the box on any machine**
 
 ## I don't want to RTFM
 - leader = comma
