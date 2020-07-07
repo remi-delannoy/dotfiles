@@ -2,7 +2,15 @@
 
 ` curl -fsSL https://raw.githubusercontent.com/remi-delannoy/dotfile/master/quickinstall.sh | sh `
 
-**Note that some auto formating/compiling requires other programs/scripts and might not work out of the box on any machine**
+**WARNING: it will delete your init.vim and some other config files, you might want to backup them**
+
+### What do I install?
+- alacritty config
+- nvim config
+- fish config
+- nice ls colors
+
+**Note that some auto formating/compiling in init.vim requires other programs/scripts and might not work out of the box on any machine**
 
 ## I don't want to RTFM
 - leader = comma
