@@ -179,6 +179,7 @@ set mouse=a
 "tab length
 set shiftwidth=2
 set expandtab
+set wrap linebreak
 
 "easy block moving
 vnoremap <Tab> > gv
