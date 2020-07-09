@@ -1,6 +1,6 @@
 ## Quick installation
 
-` curl -fsSL https://raw.githubusercontent.com/remi-delannoy/dotfile/master/quickinstall.sh | sh `
+` curl -fsSL https://raw.githubusercontent.com/remi-delannoy/dotfiles/master/quickinstall.sh | sh `
 
 **WARNING: it will replace your init.vim and some other config files, you might want to back them up**
 
@@ -37,5 +37,8 @@
 - [julia-vim](https://github.com/JuliaEditorSupport/julia-vim)
 
 ### Misc
-- latex\_compile.sh: A script that compile your .tex file without having to type 4 times pdflatex
+- latex\_compile.sh: A script which compile your .tex file without having to type 4 times pdflatex
+- connect\_BT.sh: A script for BT connection management based on dmenu
+- batterybar.bash: A script which display battery information
+- wireless\_status: A script which show your wifi and bluetooth connections
 
