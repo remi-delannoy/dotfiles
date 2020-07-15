@@ -126,17 +126,17 @@ input "1267:12557:ASUE1407:00_04F3:310D_Touchpad" {
     # start thunar
     bindsym $mod+e exec thunar
     # Add emoji to clipboard
-    bindsym $mod+n exec sh /home/remi/.local/bin/get_emoji
+    bindsym $mod+n exec sh /home/remi/.local/bin/get_emoji.sh
 
 #
 # Specials keys:
 #
-bindsym XF86AudioRaiseVolume exec sh /home/remi/.local/bin/increase_volume 
-bindsym XF86AudioLowerVolume exec sh /home/remi/.local/bin/decrease_volume 
+bindsym XF86AudioRaiseVolume exec sh /home/remi/.local/bin/increase_volume.sh
+bindsym XF86AudioLowerVolume exec sh /home/remi/.local/bin/decrease_volume.sh
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec sh /home/remi/.local/bin/decrease_brightness 
-bindsym XF86MonBrightnessUp exec sh /home/remi/.local/bin/increase_brightness
+bindsym XF86MonBrightnessDown exec sh /home/remi/.local/bin/decrease_brightness.sh
+bindsym XF86MonBrightnessUp exec sh /home/remi/.local/bin/increase_brightnes.sh
 
 # compatibility with fn key
 bindsym Mod4+Shift+s exec screencapture region
