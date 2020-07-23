@@ -40,8 +40,6 @@ exec wmname compiz
 
 ### Idle configuration
 #
-# Example configuration:
-#
 exec swayidle -w \
          timeout 290 'notify-send "Lock" "Screen will be locked in 10 sec" -t 2000 -u CRITICAL' \
          timeout 300 'swaylock -f' 
@@ -49,6 +47,8 @@ exec swayidle -w \
          timeout 600 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f'
+
+exec xss-lock -- swaylock -f 
 
 ### Input configuration
 input * xkb_layout "fr"
@@ -121,8 +121,8 @@ input "1267:12557:ASUE1407:00_04F3:310D_Touchpad" {
     # Lock the screen and stop the display
     bindsym Control+Alt+l exec /home/remi/.local/bin/toggle_idle 
     bindsym Mod4+l exec /home/remi/.local/bin/toggle_idle 
-    # Start firefox 
-    bindsym $mod+f exec firefox
+    # Start firefox with wayland
+    bindsym $mod+f exec env MOZ_ENABLE_WAYLAND=1 firefox
     # start thunar
     bindsym $mod+e exec thunar
     # Add emoji to clipboard
@@ -133,10 +133,10 @@ input "1267:12557:ASUE1407:00_04F3:310D_Touchpad" {
 #
 bindsym XF86AudioRaiseVolume exec sh /home/remi/.local/bin/increase_volume.sh
 bindsym XF86AudioLowerVolume exec sh /home/remi/.local/bin/decrease_volume.sh
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle 
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessDown exec sh /home/remi/.local/bin/decrease_brightness.sh
-bindsym XF86MonBrightnessUp exec sh /home/remi/.local/bin/increase_brightnes.sh
+bindsym XF86MonBrightnessUp exec sh /home/remi/.local/bin/increase_brightness.sh
 
 # compatibility with fn key
 bindsym Mod4+Shift+s exec screencapture region
