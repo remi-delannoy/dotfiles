@@ -164,6 +164,25 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "Coc extensions
 let g:coc_global_extensions=["coc-clangd","coc-jedi","coc-texlab"]
 
+"Coc config
+call coc#config('languageserver', {
+        \"ccls": {
+        \"command": "ccls",
+        \"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+        \"rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+        \"initializationOptions": {
+          \"cache": {
+            \"directory": "/tmp/ccls"
+          \}
+        \}
+        \},
+        \"bash": {
+          \"command": "bash-language-server",
+          \"args": ["start"],
+          \"filetypes": ["sh","bash"],
+          \"ignoredRootPaths": ["~"]
+        \}
+        \},)
 
 "easymotion
 map <Leader> <Plug>(easymotion-prefix)

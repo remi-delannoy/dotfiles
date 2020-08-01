@@ -10,9 +10,6 @@ curl -fsSLo $HOME/.config/nvim/init.vim --create-dirs \
     https://raw.githubusercontent.com/remi-delannoy/dotfiles/master/configfiles/init.vim 
 echo "installing nvim plugins"
 nvim -es -u $HOME/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
-echo "installing coc config"
-curl -fsSLo $HOME/.config/nvim/coc-settings.json --create-dirs \
-    https://raw.githubusercontent.com/remi-delannoy/dotfiles/master/configfiles/coc-settings.json
 #alacritty
 curl -fsSLo $HOME/.config/alacritty/alacritty.yml --create-dirs \
     https://raw.githubusercontent.com/remi-delannoy/dotfiles/master/configfiles/alacritty.yml
