@@ -164,6 +164,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "Coc extensions
 let g:coc_global_extensions=["coc-clangd","coc-jedi","coc-texlab"]
 
+
 "easymotion
 map <Leader> <Plug>(easymotion-prefix)
 
