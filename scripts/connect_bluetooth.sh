@@ -17,9 +17,9 @@ fi
 connected=$(bluetoothctl -- info "$mac" | awk -F ': ' '/Connected/ {print $2}') 
 bluetoothctl -- connect "$mac"
 if [ $? -ne 0 ];then
-    pulseaudio --kill 
-    pulseaudio --start
-    bluetoothctl -- connect "$mac" || (notify-send "Bluetooth" "Can't connect to $device_name" ; exit 1)
+  #maybe pulseaudio isn't started yet and is needed to connect to the device
+  systemctl --user start pulseaudio.service  
+  bluetoothctl -- connect "$mac" || (notify-send "Bluetooth" "Can't connect to $device_name" ; exit 1)
 fi
 notify-send "Bluetooth" "Connected to $device_name"
 
