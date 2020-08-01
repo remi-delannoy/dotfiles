@@ -13,6 +13,8 @@ mkdir -p $HOME/.config/nvim
 ln -f configfiles/init.vim $HOME/.config/nvim/init.vim 
 echo "installing nvim plugins"
 nvim -es -u $HOME/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
+echo "installing coc config"
+ln -f configfiles/coc-settings.json $HOME/.config/nvim/coc-settings.json
 #alacritty
 echo "installing alacritty config"
 mkdir -p $HOME/.config/alacritty
