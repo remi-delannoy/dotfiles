@@ -183,7 +183,6 @@ call coc#config('languageserver', {
           \"ignoredRootPaths": ["~"]
         \}
         \},)
-
 "easymotion
 map <Leader> <Plug>(easymotion-prefix)
 
@@ -201,13 +200,16 @@ set shiftwidth=2
 set expandtab
 set wrap linebreak
 
-"easy block moving
+"easy block moving 
 vnoremap <Tab> > gv
 vnoremap <S-Tab> < gv
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 xnoremap <C-Up> xkP`[V`]
 xnoremap <C-Down> xp`[V`]
+
+"as we mapped tab we can't use <C-I>=<Tab> to navigate jumps, we use <C-U> instead
+noremap <C-U> <C-I>
 
 "navigating between splits with C-hjkl
 noremap <C-h> <C-w>h
