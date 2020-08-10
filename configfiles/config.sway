@@ -42,14 +42,11 @@ exec wmname compiz
 #
 exec swayidle -w \
          timeout 290 'notify-send "Lock" "Screen will be locked in 10 sec" -t 2000 -u CRITICAL' \
-         timeout 300 'swaylock -f' 
-exec swayidle -w \
-         timeout 600 'swaymsg "output * dpms off"' \
-              resume 'swaymsg "output * dpms on"' \
+         timeout 300 'swaylock -f' \
+         timeout 600 'swaymsg "output eDP-1 dpms off"' \
+              resume 'swaymsg "output eDP-1 dpms on"' \
          before-sleep 'swaylock -f' \
          lock 'swaylock -f'
-
-exec xss-lock -- swaylock -f 
 
 ### Input configuration
 input * xkb_layout "fr"
@@ -120,8 +117,8 @@ input "1267:12557:ASUE1407:00_04F3:310D_Touchpad" {
 # Quick start:
 #
     # Lock the screen and stop the display
-    bindsym Control+Alt+l exec /home/remi/.local/bin/toggle_idle 
-    bindsym Mod4+l exec /home/remi/.local/bin/toggle_idle 
+    bindsym Control+Alt+l exec swaylock -f
+    bindsym Mod4+l exec swaylock -f
     # Start firefox with wayland
     bindsym $mod+f exec env MOZ_ENABLE_WAYLAND=1 firefox
     # start thunar
@@ -140,17 +137,17 @@ bindsym XF86MonBrightnessDown exec sh /home/remi/.local/bin/decrease_brightness.
 bindsym XF86MonBrightnessUp exec sh /home/remi/.local/bin/increase_brightness.sh
 
 # compatibility with fn key
-bindsym Mod4+Shift+s exec screencapture region
+bindsym Mod4+Shift+s exec screencapture region -c
 
-bindsym Print exec screencapture display
-bindsym Alt+Print exec screencapture region
-bindsym Shift+Print exec screencapture window
+bindsym Print exec screencapture display -c
+bindsym Alt+Print exec screencapture region -c
+bindsym Shift+Print exec screencapture window -c
 
-#add control for clipboard
-bindsym Control+Mod4+Shift+s exec screencapture region -c
-bindsym Control+Print exec screencapture display -c
-bindsym Control+Alt+Print exec screencapture region -c
-bindsym Control+Shift+Print exec screencapture window -c
+#add control to save in $HOME/Images
+bindsym Control+Mod4+Shift+s exec screencapture region
+bindsym Control+Print exec screencapture display
+bindsym Control+Alt+Print exec screencapture region
+bindsym Control+Shift+Print exec screencapture window
 
 
 #

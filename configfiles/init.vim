@@ -223,6 +223,9 @@ noremap <C-C> "+y
 " display line number
 set number
 
+"undo persistence
+set undofile
+
 " goto last position when opening a file
 autocmd BufReadPost * exe "normal! g'\""
 " format python file with black
