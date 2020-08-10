@@ -1,9 +1,9 @@
 #require zsh-syntax-highlighting, zsh-autosuggestions and agnoster theme in /usr/share/zsh/functions/Prompts/prompt_agnoster_setup
-fpath=("$HOME/.config/zsh/theme" "$fpath[@]")
 autoload -Uz compinit promptinit
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 
 compinit
+fpath=("$HOME/.config/zsh/theme" "$fpath[@]")
 promptinit
 prompt agnoster
 
@@ -18,11 +18,14 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-HISTFILE=$HOME/.cache/zsh/zsh_history
-HISTZISE=5000
-SAVEHIST=5000
+# history setting
+export HISTFILE=$HOME/.cache/zsh/zsh_history
+export HISTSIZE=5000
+export SAVEHIST=5000
 setopt appendhistory
 setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
 
 #use vim key, normally enable by default with EDITOR=nvim but better safe than sorry
 bindkey -v
