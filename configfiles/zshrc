@@ -22,6 +22,7 @@ HISTFILE=$HOME/.cache/zsh/zsh_history
 HISTZISE=5000
 SAVEHIST=5000
 setopt appendhistory
+setopt share_history
 
 #use vim key, normally enable by default with EDITOR=nvim but better safe than sorry
 bindkey -v
