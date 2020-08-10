@@ -1,0 +1,62 @@
+#require zsh-syntax-highlighting, zsh-autosuggestions and agnoster theme in /usr/share/zsh/functions/Prompts/prompt_agnoster_setup
+fpath=("$HOME/.config/zsh/theme" "$fpath[@]")
+autoload -Uz compinit promptinit
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+
+compinit
+promptinit
+prompt agnoster
+
+# color for ls
+eval $(dircolors ~/.dircolors/dircolors.ansi-dark)
+
+# suggestions navigable, colored with LS_COLORS and case-insensitive
+zstyle ':completion:*' menu select 
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+HISTFILE=$HOME/.cache/zsh/zsh_history
+HISTZISE=5000
+SAVEHIST=5000
+setopt appendhistory
+
+#use vim key, normally enable by default with EDITOR=nvim but better safe than sorry
+bindkey -v
+
+#bind arrow up and down as well as j and k in nmod to history search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey -- "^[OA" up-line-or-beginning-search
+bindkey -- "^[OB" down-line-or-beginning-search
+bindkey -- "^[[A" up-line-or-beginning-search
+bindkey -- "^[[B" down-line-or-beginning-search
+bindkey -M vicmd 'k' up-line-or-beginning-search
+bindkey -M vicmd 'j' down-line-or-beginning-search
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+alias "vim"="nvim"
+
+# ls alias
+alias "ls"="ls --color=tty"
+alias "ll"="ls -lh"
+alias "la"="ls -lAh"
+
+# git alias
+alias "gca"="git commit -av"
+alias "gst"="git status"
+
+#auto rescale image in feh
+alias -g 'feh'='feh --scale-down'
+
+#cd alias
+alias ".."="cd .."
+alias "..."="cd ../.."
+alias "...."="cd ../../.."
+
+

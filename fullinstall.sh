@@ -17,10 +17,14 @@ nvim -es -u $HOME/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
 echo "installing alacritty config"
 mkdir -p $HOME/.config/alacritty
 ln -f configfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml 
-#fish
-echo "installing fish config"
-curl -fsSL https://get.oh-my.fish | fish
-ln -f configfiles/config.fish $HOME/.config/fish/conf.d/config.fish 
+#zsh
+echo "installing zsh config in .config/zsh"
+echo "ZDOTDIR=$HOME/.config/zsh"> $HOME/.zshenv
+echo "You can get rid of $HOME/.zshenv by setting ZDOTDIR in /etc/zsh/zshenv"
+curl -fsSLo $HOME/.config/zsh/theme/prompt_agnoster_setup --create-dirs \
+https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme
+ln -f configfiles/zshrc $HOME/.config/zsh/.zshrc
+ln -f configfiles/zshrc $HOME/.config/zsh/zshrc
 #ls color
 echo "installing nice colors for ls"
 mkdir -p $HOME/.dircolors/
