@@ -5,10 +5,16 @@
 **WARNING: it will replace your init.vim and some other config files, you might want to back them up**
 
 ### What do I install?
+#### With the quick install
 - alacritty config 
 - nvim config (and some plugins)
-- fish config (with oh my fish)
+- zsh config without oh my zsh 
 - nice ls colors
+#### With the full install
+In addition to the previous things:
+- sway config
+- mako config
+- i3blocks config
 
 **Note that some auto formating/compiling in init.vim requires other programs/scripts and might not work out of the box on any machine**
 
