@@ -31,11 +31,13 @@ case "$1" in
 		echo 'Usage: swayshot [display|window|region] [-c]'
 		;;
 	region)
+        selection="$(slurp -b '#AFAFAFAF' -c '#FF3F3FAF' -s '#00000000' -w 3 -d)"
+        [ $? -eq 0 ] || exit 1
         if [ "$2" == "-c" ]
         then
-            grim -g "$(slurp -b '#AFAFAFAF' -c '#FF3F3FAF' -s '#00000000' -w 3 -d)" - | wl-copy && eval $notif_clipboard
+            grim -g "$selection" - | wl-copy && eval $notif_clipboard
         else
-            grim -g "$(slurp -b '#AFAFAFAF' -c '#FF3F3FAF' -s '#00000000' -w 3 -d)" $SCREENSHOT_FULLNAME && eval $notif_file
+            grim -g "$selection" $SCREENSHOT_FULLNAME && eval $notif_file
         fi
 		;;
 	window)
