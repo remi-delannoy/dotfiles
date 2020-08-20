@@ -3,12 +3,12 @@ autoload -Uz compinit promptinit
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 
 compinit
-fpath=("$HOME/.config/zsh/theme" "$fpath[@]")
+fpath=("$HOME/.local/share/zsh/theme" "$fpath[@]")
 promptinit
 prompt agnoster
 
 # color for ls
-eval $(dircolors ~/.dircolors/dircolors.ansi-dark)
+eval $(dircolors $HOME/.local/share/dircolors/dircolors.ansi-dark)
 
 # suggestions navigable, colored with LS_COLORS and case-insensitive
 zstyle ':completion:*' menu select 
@@ -18,8 +18,12 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
 # history setting
-export HISTFILE=$HOME/.cache/zsh/zsh_history
+export HISTFILE=$XDG_CACHE_HOME/zsh/zsh_history
 export HISTSIZE=5000
 export SAVEHIST=5000
 setopt appendhistory
@@ -63,4 +67,11 @@ alias ".."="cd .."
 alias "..."="cd ../.."
 alias "...."="cd ../../.."
 
+#relocate all the .folder where they should be (aka not polluting my $HOME)
+export LESSHISTFILE=$XDG_CACHE_HOME/less/lesshst
+export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
+export PYLINTHOME=$XDG_CACHE_HOME/pylint
 
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
+export NPM_CONFIG_CACHE=$XDG_CACHE_HOME/npm
+export NPM_CONFIG_TMP=$XDG_RUNTIME_DIR/npm
