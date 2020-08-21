@@ -3,7 +3,7 @@ powered=$(bluetoothctl -- show | awk -F ': ' 'NR==5 {print $2}')
 if [ "$powered" = "no" ];then
   bluetoothctl -- power on || (notify-send 'Bluetooth' "Can't turn the bluetooth on" ; exit 1)
 fi
-device_name=$(bluetoothctl -- devices | awk '{for (i=3;i<=NF-1;i++) printf $i" ";print $NF}' | dmenu -i)
+device_name=$(bluetoothctl -- devices | awk '{for (i=3;i<=NF-1;i++) printf $i" ";print $NF}' | wofi --show dmenu -i)
 [ ! -z "$device_name" ] || exit 1
 mac=$(bluetoothctl -- devices | awk "/$device_name/ {print \$2}")
 paired=$(bluetoothctl -- info "$mac" | awk -F ': ' '/Paired/ {print $2}') 
