@@ -21,14 +21,15 @@ ln -f configfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 echo "installing zsh config in .config/zsh"
 echo "ZDOTDIR=$HOME/.config/zsh"> $HOME/.zshenv
 echo "You can get rid of $HOME/.zshenv by setting ZDOTDIR in /etc/zsh/zshenv"
-curl -fsSLo $HOME/.config/zsh/theme/prompt_agnoster_setup --create-dirs \
-https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme
 ln -f configfiles/zshrc $HOME/.config/zsh/.zshrc
 ln -f configfiles/zshrc $HOME/.config/zsh/zshrc
+echo "installing prompt theme"
+mkdir -p $HOME/.local/share/zsh/theme/
+ln -f configfiles/prompt_myprompt_setup $HOME/.local/share/zsh/prompt_myprompt_setup
 #ls color
 echo "installing nice colors for ls"
-mkdir -p $HOME/.dircolors/
-ln -f configfiles/dircolors.ansi-dark $HOME/.dircolors/dircolors.ansi-dark 
+mkdir -p $HOME/.local/share/dircolors/
+ln -f configfiles/dircolors.ansi-dark $HOME/.local/share/dircolors/dircolors.ansi-dark 
 #mako
 echo "installing mako config"
 mkdir -p $HOME/.config/mako
