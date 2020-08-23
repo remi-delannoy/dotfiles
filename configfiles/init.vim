@@ -237,6 +237,6 @@ autocmd BufWritePost *.h,*.c,*.cpp silent !clang-format -i <afile>
 autocmd BufWritePost *.h,*.c,*.cpp edit  
 
 " autocompile tex file
-autocmd BufWritePost *.tex silent !/home/remi/.local/bin/latex_compile <afile> 
+autocmd BufWritePost *.tex silent !$HOME/.local/bin/latex_compile <afile> 
 
 

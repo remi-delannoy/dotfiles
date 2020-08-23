@@ -1,3 +1,14 @@
+# WARNING !!!
+This files are written for archlinux with `installed_packages` installed
+It's very unlikely that everythings work out-of-the-box on an other environment 
+Common issues :
+- `zsh-autosuggestions` and/or `zsh-syntax-highlighting` not installed or not where they are expected to be by .zshrc
+- `npm` not installed (for coc.nvim)
+- `python(3)-venv` not installed (for coc-jedi)
+- `python-black` not installed (for python files auto formating)
+- `clang-format` not installed (for C-like files auto formating)
+- [latex\_compile](https://github.com/remi-delannoy/dotfiles#misc) not in $HOME/.local/bin (for auto compilation of tex files)
+
 ## Quick installation
 
 ` curl -fsSL https://raw.githubusercontent.com/remi-delannoy/dotfiles/master/quickinstall.sh | sh `
@@ -7,8 +18,8 @@
 ### What do I install?
 #### With the quick install
 - alacritty config 
-- nvim config (and some plugins)
-- zsh config without oh my zsh 
+- neovim config (and some plugins)
+- zsh config 
 - nice ls colors
 #### With the full install
 In addition to the previous things:
@@ -16,9 +27,7 @@ In addition to the previous things:
 - mako config
 - i3blocks config
 
-**Note that some auto formating/compiling in init.vim requires other programs/scripts and might not work out of the box on any machine**
-
-## I don't want to RTFM, what are all this plugins used for ?
+## Neovim plugins: I don't want to RTFM, can you give me a TL;DR? 
 - leader = comma
 - ctrl-p = fuzzy file search
 - gd = go to definition (gy,gi and gr for type def, implementation and reference) 
@@ -43,8 +52,5 @@ In addition to the previous things:
 - [julia-vim](https://github.com/JuliaEditorSupport/julia-vim)
 
 ### Misc
-- latex\_compile.sh: A script which compile your .tex file without having to type 4 times pdflatex
-- connect\_BT.sh: A script for BT connection management based on dmenu
-- batterybar.bash: A script which display battery information
-- wireless\_status: A script which show your wifi and bluetooth connections
+- latex\_compile.sh: A script which compiles your .tex file without having to type 4 times pdflatex and polluting your directory with multiple files
 

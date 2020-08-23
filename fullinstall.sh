@@ -10,7 +10,9 @@ cd dotfiles
 #init.vim install
 echo "installing nvim config"
 mkdir -p $HOME/.config/nvim
+mkdir -p $HOME/.local/bin
 ln -f configfiles/init.vim $HOME/.config/nvim/init.vim 
+ln -f scripts/latex_compile.sh $HOME/.local/bin/latex_compile
 echo "installing nvim plugins"
 nvim -es -u $HOME/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa"
 #alacritty
@@ -21,11 +23,13 @@ ln -f configfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 echo "installing zsh config in .config/zsh"
 echo "ZDOTDIR=$HOME/.config/zsh"> $HOME/.zshenv
 echo "You can get rid of $HOME/.zshenv by setting ZDOTDIR in /etc/zsh/zshenv"
+mkdir -p $HOME/.config/zsh
+mkdir -p $HOME/.cache/zsh
 ln -f configfiles/zshrc $HOME/.config/zsh/.zshrc
 ln -f configfiles/zshrc $HOME/.config/zsh/zshrc
 echo "installing prompt theme"
-mkdir -p $HOME/.local/share/zsh/theme/
-ln -f configfiles/prompt_myprompt_setup $HOME/.local/share/zsh/prompt_myprompt_setup
+mkdir -p $HOME/.local/share/zsh/theme
+ln -f configfiles/prompt_myprompt_setup $HOME/.local/share/zsh/theme/prompt_myprompt_setup
 #ls color
 echo "installing nice colors for ls"
 mkdir -p $HOME/.local/share/dircolors/
