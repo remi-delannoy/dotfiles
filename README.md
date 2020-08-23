@@ -1,19 +1,22 @@
 # WARNING !!!
-This files are written for archlinux with `installed_packages` installed
-It's very unlikely that everythings work out-of-the-box on an other environment 
-Common issues :
+This files are written for archlinux with `installed_packages` installed.
+
+It's very unlikely that everythings work out-of-the-box on an other environment.
+
+Common issues:
 - `zsh-autosuggestions` and/or `zsh-syntax-highlighting` not installed or not where they are expected to be by .zshrc
 - `npm` not installed (for coc.nvim)
 - `python(3)-venv` not installed (for coc-jedi)
 - `python-black` not installed (for python files auto formating)
 - `clang-format` not installed (for C-like files auto formating)
+- `bash-language-server` not installed (for bash files LSP)
 - [latex\_compile](https://github.com/remi-delannoy/dotfiles#misc) not in $HOME/.local/bin (for auto compilation of tex files)
 
 ## Quick installation
-
-` curl -fsSL https://raw.githubusercontent.com/remi-delannoy/dotfiles/master/quickinstall.sh | sh `
-
 **WARNING: it will replace your init.vim and some other config files, you might want to back them up**
+
+`curl -fsSL https://raw.githubusercontent.com/remi-delannoy/dotfiles/master/quickinstall.sh | sh`
+
 
 ### What do I install?
 #### With the quick install
