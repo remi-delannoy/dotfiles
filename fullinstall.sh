@@ -5,8 +5,9 @@ echo "installing vim-plug"
 curl -fsSLo "$HOME"/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo "cloning the repo in .local/share/dotfiles"
+mkdir -p "$HOME/.local/share"
 cd "$HOME/.local/share"
-git clone git@github.com:remi-delannoy/dotfiles.git
+git clone https://github.com/remi-delannoy/dotfiles.git
 DOTFILE_DIR="$HOME/.local/share/dotfiles"
 #init.vim install
 echo "installing nvim config"
