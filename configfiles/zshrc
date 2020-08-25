@@ -17,6 +17,7 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 export EDITOR="nvim"
 export VISUAL="nvim"
+export PATH="$PATH:$HOME/.local/bin"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -45,7 +46,7 @@ bindkey -- "^[[B" down-line-or-beginning-search
 bindkey -M vicmd 'k' up-line-or-beginning-search
 bindkey -M vicmd 'j' down-line-or-beginning-search
 
-cat /etc/*-release | grep archlinux
+cat /etc/*-release | grep archlinux &> /dev/null
 if [ $? -eq 0 ];then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -53,6 +54,7 @@ else
   source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
+
 
 
 alias "vim"="nvim"

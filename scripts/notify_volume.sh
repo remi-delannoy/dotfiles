@@ -15,4 +15,4 @@ do
     i=$((i+5))
 done
 notification="$notification</span>"
-$HOME/.local/bin/unique_notification.py -s "Volume" -m $notification -t 750
+"$HOME/.local/bin/unique_notification.py" -s "Volume" -m $notification -t 750
