@@ -63,6 +63,7 @@ alias "ll"="ls -lh"
 alias "la"="ls -lAh"
 
 # git alias
+alias "gc"="git commit -v"
 alias "gca"="git commit -av"
 alias "gst"="git status"
 

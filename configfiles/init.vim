@@ -12,6 +12,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'farmergreg/vim-lastplace'
 call plug#end()
 
 "plugins config
@@ -20,7 +23,16 @@ set termguicolors
 let ayucolor="dark"
 colorscheme ayu
 
+" ultisnips
+" only to not conflict with <tab> for suggestion, completion of snippets will
+" be handle by coc-ultisnips via completion
+let g:UltiSnipsExpandTrigger="<c-b>"
+
 "coc (end line ~160)
+
+"Coc extensions
+let g:coc_global_extensions=["coc-clangd","coc-jedi","coc-texlab","coc-ultisnips"]
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -60,6 +72,7 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -160,29 +173,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-
-"Coc extensions
-let g:coc_global_extensions=["coc-clangd","coc-jedi","coc-texlab"]
-
-"Coc config
-call coc#config('languageserver', {
-        \"ccls": {
-        \"command": "ccls",
-        \"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
-        \"rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
-        \"initializationOptions": {
-          \"cache": {
-            \"directory": "/tmp/ccls"
-          \}
-        \}
-        \},
-        \"bash": {
-          \"command": "bash-language-server",
-          \"args": ["start"],
-          \"filetypes": ["sh","bash"],
-          \"ignoredRootPaths": ["~"]
-        \}
-        \},)
 "easymotion
 map <Leader> <Plug>(easymotion-prefix)
 
@@ -223,11 +213,9 @@ noremap <C-C> "+y
 " display line number
 set number
 
-"undo persistence
+"keep history of undos
 set undofile
 
-" goto last position when opening a file
-autocmd BufReadPost * exe "normal! g'\""
 " format python file with black
 autocmd BufWritePost *.py silent !black <afile>  
 autocmd BufWritePost *.py edit  
@@ -238,5 +226,4 @@ autocmd BufWritePost *.h,*.c,*.cpp edit
 
 " autocompile tex file
 autocmd BufWritePost *.tex silent !$HOME/.local/bin/latex_compile <afile> 
-
 
