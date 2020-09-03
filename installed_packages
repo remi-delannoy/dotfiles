@@ -24,12 +24,12 @@ cups-pdf
 dashbinsh
 debtap
 dhcpcd
-dmenu
 docker
 efibootmgr
 feh
 file-roller
 firefox
+firefox-i18n-fr
 fish
 flex
 git
@@ -90,6 +90,8 @@ python-pip
 python-pylint
 python-pynvim
 python-selenium
+qt5-3d
+qt5-charts
 ranger
 rpmextract
 rust
@@ -111,6 +113,8 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 thunar
+thunar-archive-plugin
+thunar-volman
 thunderbird
 tk
 tldr
@@ -124,6 +128,7 @@ vlc
 wf-recorder
 wl-clipboard
 wmname
+wofi
 xorg-server-xwayland
 youtube-dl
 zathura

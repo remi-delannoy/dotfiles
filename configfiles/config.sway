@@ -17,8 +17,7 @@ set $right l
 set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened on the original workspace that the command was run on.
-# For some reason wofi --show run don't work as intented (not the right $PATH) when not run from a terminal
-set $menu dmenu_path | wofi --show dmenu -i | xargs swaymsg exec -- 
+set $menu wofi --show run -i | xargs swaymsg exec -- 
 
 ### Output configuration
 #
