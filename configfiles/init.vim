@@ -185,6 +185,9 @@ noremap <Leader>o :BufExplorer<cr>
 " mouse support
 set mouse=a
 
+"time between key press for combination
+set timeoutlen=300
+
 "tab length
 set shiftwidth=2
 set expandtab
@@ -209,6 +212,10 @@ noremap <C-l> <C-w>l
 
 " ctrl+c like copy
 noremap <C-C> "+y
+
+" quick accolades
+inoremap (( {
+inoremap )) }
 
 " display line number
 set number

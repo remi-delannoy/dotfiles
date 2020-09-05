@@ -22,7 +22,7 @@ set $menu wofi --show run -i | xargs swaymsg exec --
 ### Output configuration
 #
 # wallpaper setup
-output * bg /home/remi/Images/wallpaper/archlinux_wp1.png fill
+output * bg $HOME/Images/wallpaper/archlinux_wp1.png fill
 # resolution setup
 output $screen resolution $resolution
 
@@ -73,7 +73,7 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec swaymsg exit
 #
 # Moving around:
 #
@@ -99,17 +99,17 @@ bindsym $mod+f exec env MOZ_ENABLE_WAYLAND=1 firefox
 # start thunar
 bindsym $mod+e exec thunar
 # Add emoji to clipboard
-bindsym $mod+n exec sh /home/remi/.local/bin/get_emoji
+bindsym $mod+n exec sh $HOME/.local/bin/get_emoji
 
 #
 # Specials keys:
 #
-bindsym XF86AudioRaiseVolume exec sh /home/remi/.local/bin/increase_volume
-bindsym XF86AudioLowerVolume exec sh /home/remi/.local/bin/decrease_volume
+bindsym XF86AudioRaiseVolume exec sh $HOME/.local/bin/increase_volume
+bindsym XF86AudioLowerVolume exec sh $HOME/.local/bin/decrease_volume
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle 
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec sh /home/remi/.local/bin/decrease_brightness
-bindsym XF86MonBrightnessUp exec sh /home/remi/.local/bin/increase_brightness
+bindsym XF86MonBrightnessDown exec sh $HOME/.local/bin/decrease_brightness
+bindsym XF86MonBrightnessUp exec sh $HOME/.local/bin/increase_brightness
 
 #Screen capture
 # compatibility with fn key
