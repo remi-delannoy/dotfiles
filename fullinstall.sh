@@ -31,11 +31,11 @@ ln -sf "$DOTFILE_DIR/configfiles/zshrc" "$HOME/.config/zsh/.zshrc"
 ln -sf "$DOTFILE_DIR/configfiles/zshrc" "$HOME/.config/zsh/zshrc"
 echo "installing prompt theme"
 mkdir -p "$HOME/.local/share/zsh/theme"
-ln -sf "$DOTFILE_DIR/configfiles/prompt_myprompt_setup" "$HOME/.local/share/zsh/theme/prompt_myprompt_setup"
+ln -sf "$DOTFILE_DIR/misc/prompt_myprompt_setup" "$HOME/.local/share/zsh/theme/prompt_myprompt_setup"
 #ls color
 echo "installing nice colors for ls"
 mkdir -p "$HOME/.local/share/dircolors/"
-ln -sf "$DOTFILE_DIR/configfiles/dircolors.ansi-dark" "$HOME/.local/share/dircolors/dircolors.ansi-dark" 
+ln -sf "$DOTFILE_DIR/misc/dircolors.ansi-dark" "$HOME/.local/share/dircolors/dircolors.ansi-dark" 
 #mako
 echo "installing mako config"
 mkdir -p "$HOME/.config/mako"

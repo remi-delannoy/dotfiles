@@ -22,10 +22,10 @@ curl -fsSLo $HOME/.config/zsh/.zshrc --create-dirs \
 mkdir -p $HOME/.cache/zsh
 echo "installing prompt theme"
 curl -fsSLo $HOME/.local/share/zsh/theme/prompt_myprompt_setup --create-dirs \
-    https://raw.githubusercontent.com/remi-delannoy/dotfiles/master/configfiles/prompt_myprompt_setup
+    https://raw.githubusercontent.com/remi-delannoy/dotfiles/master/misc/prompt_myprompt_setup
 #ls color
 echo "installing nice colors for ls"
 curl -fsSLo $HOME/.local/share/dircolors/dircolors.ansi-dark --create-dirs \
-    https://raw.githubusercontent.com/remi-delannoy/dotfiles/master/configfiles/dircolors.ansi-dark
+    https://raw.githubusercontent.com/remi-delannoy/dotfiles/master/misc/dircolors.ansi-dark
 
 

@@ -146,6 +146,7 @@ prompt_agnoster_precmd() {
   vcs_info
   PROMPT='%{%f%b%k%}$(prompt_agnoster_main) '
   RPROMPT='$(prompt_vi_imode)'
+  echo -ne '\e[5 q'
 }
 
 prompt_agnoster_setup() {
@@ -162,12 +163,13 @@ prompt_agnoster_setup() {
   zstyle ':vcs_info:*' check-for-changes false
   zstyle ':vcs_info:git*' formats '%b'
   zstyle ':vcs_info:git*' actionformats '%b (%a)'
+
 }
 
 zle-keymap-select (){
   case $KEYMAP in
-    vicmd) RPROMPT="$(prompt_vi_nmode)"; zle reset-prompt;; 
-    viins|main) RPROMPT="$(prompt_vi_imode)"; zle reset-prompt;;
+    vicmd) RPROMPT="$(prompt_vi_nmode)"; echo -ne '\e[1 q'; zle reset-prompt;; 
+    viins|main) RPROMPT="$(prompt_vi_imode)"; echo -ne '\e[5 q'; zle reset-prompt;;
   esac
 }
 

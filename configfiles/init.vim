@@ -213,6 +213,9 @@ noremap <C-l> <C-w>l
 " ctrl+c like copy
 noremap <C-C> "+y
 
+"search for selection
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 " quick accolades
 inoremap (( {
 inoremap )) }
