@@ -17,7 +17,7 @@ set $right l
 set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened on the original workspace that the command was run on.
-set $menu wofi --show run -i | xargs swaymsg exec -- 
+set $menu wofi --show run -i -p Run | xargs swaymsg exec -- 
 
 ### Output configuration
 #
@@ -50,6 +50,22 @@ input $pad {
   middle_emulation disabled
 }
 #
+
+# Floating window by default
+for_window [app_id="gnome-calculator"] floating enable
+for_window [app_id="thunar"] floating enable
+
+# GTK theme
+# most programms rely on a deamon to retrieve gtk settings
+# and not the config file, therefore, we need to set it here
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Qogir'
+    gsettings set $gnome-schema icon-theme 'Tela-orange'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
+}
+
 
 ### Key bindings
 
@@ -95,11 +111,15 @@ bindsym $mod+Shift+$right move right
 bindsym Control+Alt+l exec swaylock -f
 bindsym Mod4+l exec swaylock -f
 # Start firefox with wayland support
-bindsym $mod+f exec env MOZ_ENABLE_WAYLAND=1 firefox
+bindsym $mod+f exec firefox
 # start thunar
 bindsym $mod+e exec thunar
 # Add emoji to clipboard
 bindsym $mod+n exec sh $HOME/.local/bin/get_emoji
+
+# Start calculator
+bindsym $mod+c exec gnome-calculator
+
 
 #
 # Specials keys:
