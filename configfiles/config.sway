@@ -26,9 +26,6 @@ output * bg $HOME/Images/wallpaper/archlinux_wp1.png fill
 # resolution setup
 output $screen resolution $resolution
 
-# Java non-reparenting (fix grey screen, java has a hard-coded list and sway is not in it)
-exec wmname compiz
-
 ### Idle configuration
 #
 exec swayidle -w \
@@ -53,7 +50,6 @@ input $pad {
 
 # Floating window by default
 for_window [app_id="gnome-calculator"] floating enable
-for_window [app_id="thunar"] floating enable
 
 # GTK theme
 # most programms rely on a deamon to retrieve gtk settings

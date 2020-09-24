@@ -88,3 +88,5 @@ export NPM_CONFIG_TMP=$XDG_RUNTIME_DIR/npm
 
 # wayland backend for firefox
 export MOZ_ENABLE_WAYLAND=1 
+# fix issues with java application and sway
+export _JAVA_AWT_WM_NONREPARENTING=1

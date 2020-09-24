@@ -27,19 +27,22 @@ dhcpcd
 docker
 efibootmgr
 feh
-file-roller
+ffmpegthumbnailer
 firefox
 firefox-i18n-fr
 fish
 flex
 git
 gnome-calculator
+gnome-disk-utility
 go
 greetd
 grim
 grub
 gst-plugins-base-libs
+gvfs
 gvfs-mtp
+gvfs-smb
 hplip
 htop
 hunspell-en_GB
@@ -53,6 +56,7 @@ libreoffice-fresh
 linux
 linux-firmware
 linux-headers
+lxappearance
 m4
 make
 mako
@@ -90,6 +94,7 @@ python-pip
 python-pylint
 python-pynvim
 python-selenium
+qogir-gtk-theme
 qt5-3d
 qt5-charts
 ranger
@@ -100,6 +105,7 @@ sudo
 sway
 swayidle
 swaylock
+tela-icon-theme
 texlive-bibtexextra
 texlive-core
 texlive-fontsextra
@@ -114,6 +120,7 @@ texlive-publishers
 texlive-science
 thunar
 thunar-archive-plugin
+thunar-media-tags-plugin
 thunar-volman
 thunderbird
 tk
@@ -121,6 +128,7 @@ tldr
 tlp
 tree
 ttf-mac-fonts
+tumbler
 unrar
 valgrind
 vi
@@ -129,10 +137,12 @@ wf-recorder
 wl-clipboard
 wmname
 wofi
+xarchiver
 xorg-server-xwayland
 youtube-dl
 zathura
 zathura-pdf-poppler
+zip
 zsh
 zsh-autosuggestions
 zsh-completions
