@@ -26,6 +26,9 @@ output * bg $HOME/Images/wallpaper/archlinux_wp1.png fill
 # resolution setup
 output $screen resolution $resolution
 
+# night mode
+exec gammastep
+
 ### Idle configuration
 #
 exec swayidle -w \
@@ -37,7 +40,7 @@ exec swayidle -w \
          before-sleep 'swaylock -f'
 
 ### Input configuration
-input * xkb_layout "fr"
+input * xkb_layout "fr-number-capslock"
 
 # pad configuration
 input $pad {

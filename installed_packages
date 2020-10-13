@@ -13,6 +13,7 @@ bluez
 bluez-libs
 bluez-utils
 boost
+brave-bin
 brightnessctl
 ccls
 clang
@@ -32,6 +33,7 @@ firefox
 firefox-i18n-fr
 fish
 flex
+gammastep
 git
 gnome-calculator
 gnome-disk-utility
@@ -100,11 +102,13 @@ qt5-charts
 ranger
 rpmextract
 rust
+simple-scan
 slurp
 sudo
 sway
 swayidle
 swaylock
+system-config-printer
 tela-icon-theme
 texlive-bibtexextra
 texlive-core
