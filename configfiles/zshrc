@@ -13,7 +13,7 @@ eval $(dircolors $HOME/.local/share/dircolors/dircolors.ansi-dark)
 # suggestions navigable, colored with LS_COLORS and case-insensitive
 zstyle ':completion:*' menu select 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 
 
 export EDITOR="nvim"
 export VISUAL="nvim"
